@@ -1,0 +1,119 @@
+//
+//  Constants.swift
+//  OneTwoThreeApp
+//
+//  Created by Orawan Manasombun on 21/6/21.
+//  Copyright © 2021 2C2P. All rights reserved.
+//
+
+typealias CompletionBlock = () -> Void
+typealias GenericCompletionBlock<T> = ( _ object: T ) -> Void
+typealias FailureBlock = (_ error: Error) -> Void
+
+public struct Constants {
+    
+    static let dateFormat: String = "yyyy-MM-dd HH:mm:ss"
+    
+    static let merchantIDUAT: String = "merchant@shopping.com"
+    
+    // MARK: - UAT
+    
+    static let publicKeyUAT =
+    """
+    -----BEGIN CERTIFICATE-----
+    MIIFnjCCBIagAwIBAgITGAAAADpJCRqQIGWOIgAAAAAAOjANBgkqhkiG9w0BAQsF
+    ADAlMRQwEgYKCZImiZPyLGQBGRYEMmMycDENMAsGA1UEAxMEMkMyUDAeFw0xNjA5
+    MDEwNTExMDFaFw0yNTEyMTQwNjU3MzFaMHkxCzAJBgNVBAYTAlRIMRAwDgYDVQQI
+    EwdCYW5na29rMRIwEAYDVQQHEwlIdWF5a3dhbmcxHjAcBgNVBAoTFTEyMyBTZXJ2
+    aWNlIENvLiwgTHRkLjELMAkGA1UECxMCSVQxFzAVBgNVBAMTDjEyM1VBVFNFQ1VS
+    RTE2MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtwKvi9wZFB1H65Pu
+    Lu7S0ePSyuQkoeYyG4Kw0VIwyeMWZt+Ep/Y+N9odEYxfIAXP0ZFEH81HmTVsPxGs
+    8+Qenzd/BWkKOm/gyd4Si2xPCWCjIcL10Rv5PqhG07Hu3IzVxpgz31j6nZTklraD
+    YLNEnelJJfxbqbpsst/vdxl1GsSWDd7y23l3wRNEWKgqdzYQOYmvh0Qr6Jz7Dprd
+    RKz4+MddokQuOUwD4qSLJUmWnNJcYLj+1+hCfTp0UFRnjkQ7KjZZWKtIf4EgdIeE
+    sL3JY+Cx479g2tf5XJbkVof8VQspgthGepOhQJh0hJJfYTUPBtEUxuNgHP0QluzW
+    61cynwIDAQABo4ICcTCCAm0wDgYDVR0PAQH/BAQDAgTwMBMGA1UdJQQMMAoGCCsG
+    AQUFBwMBMHgGCSqGSIb3DQEJDwRrMGkwDgYIKoZIhvcNAwICAgCAMA4GCCqGSIb3
+    DQMEAgIAgDALBglghkgBZQMEASowCwYJYIZIAWUDBAEtMAsGCWCGSAFlAwQBAjAL
+    BglghkgBZQMEAQUwBwYFKw4DAgcwCgYIKoZIhvcNAwcwHQYDVR0OBBYEFLrA4z2f
+    56K+3vI4vQYyKzJaFe+QMB8GA1UdIwQYMBaAFHU7UhVmAlwutMLYhfM1xW1t053y
+    MIHGBgNVHR8Egb4wgbswgbiggbWggbKGga9sZGFwOi8vL0NOPTJDMlAsQ049VUFU
+    LTJDMlBDQS0wMSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049
+    U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz10cnVlLERDPTJjMnA/Y2VydGlm
+    aWNhdGVSZXZvY2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1
+    dGlvblBvaW50MIG0BggrBgEFBQcBAQSBpzCBpDCBoQYIKwYBBQUHMAKGgZRsZGFw
+    Oi8vL0NOPTJDMlAsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENO
+    PVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1ZSxEQz0yYzJwP2NBQ2Vy
+    dGlmaWNhdGU/YmFzZT9vYmplY3RDbGFzcz1jZXJ0aWZpY2F0aW9uQXV0aG9yaXR5
+    MAwGA1UdEwEB/wQCMAAwDQYJKoZIhvcNAQELBQADggEBALlq6G8zXR+LOYdkIgDh
+    yb+JjtFwSAoR/dlO2QKIgOvsUlKz+r6dAVdCcYmLoF4bhKwZuNFDlmynr8m6+3Hm
+    Pe7p1bqI817qykK7g+T/KoHmzufacCyLvLn+qH8p9hHLae1tdwxEn+ZvVBJn/RvT
+    q+1nJuUk75l3AOmmP6Nm5BHK4ZKdeekJVL17Gr0tESslI+tR9sM1ZZBCFxw3V+sV
+    m4TS2ewL4aJ/nCKZiphLBUra/BDTwXbaFVB77gNO2bzGqMRd1dq+1oIqvS9jleO3
+    YS44ZsOivjDmyugLosZ+Zb9AZDi2YMfANX4WRlYuQ/yaofWFIDAlhqRQYCP0xHUk
+    AfE=
+    -----END CERTIFICATE-----
+    """
+
+    static let privateKeyUAT =
+    """
+    Bag Attributes
+        Microsoft Local Key set: <No Values>
+        localKeyID: 01 00 00 00
+        Microsoft CSP Name: Microsoft RSA SChannel Cryptographic Provider
+        friendlyName: bc9ca4ab0ed9f8ca68ffde0dcc39356d_c2b699bf-ea45-4255-8384-0fa463714ab9
+    Key Attributes
+        X509v3 Key Usage: 10
+    -----BEGIN PRIVATE KEY-----
+    MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAI6hDqwQAc/G2BCX
+    p2sAIT8YQtK8zOatZSo55hzxw119j123PAenMvMKarvGRWrMRPWXUJmT+hENNw0Q
+    haIgaj10ycuJB+q26r4m2oQ2RBKVx1dg62ci8iM6XAh/jNxjs7G4gq/7w7rm+amb
+    8EYf9IGHqHF448kSQqYV2R0vaaKHAgMBAAECgYAZOTZlC3emjR3M4WUEMUOv6tR2
+    fFkoOmX3r8GYQNEyCXB/PFZrbBBAlwkFKC1Ck9lmLVpdrqO8vD+OGevoHh9rd08K
+    qWjuEyeARFBZSLPbYGdnMIxFJO3ZkoOgNY+K6Cf7yjY0fs4EcfjUffUCL3ugp0rQ
+    kkMdzqLrYEIE4grqMQJBAMOpTm6nh5TTEavCkUyoEF9bJfl0yQbgccMGqKg+eCJJ
+    R+AyHHfH/UzDMlwIIIX1u/Z/S7l+Q+4JtPAa1EX/BMsCQQC6nRDRUYLk1GgOaC5w
+    RuE1FIM4HlxZaFsBcgdUjPqMiha+3pYk0SCZ4BdqGx9zQcijmAhCKhoQda8Iu6c5
+    6N21AkEAlGUPKFuFN/mROGy72KDKshemSHkrkjyd62VceyXN5WsgyUgYUTxrv1F4
+    G1bKm+8Q3NYU7511Fc9k3Insnx3YWwJANzB4Zs9KfM5sr8YT5dSwifg1DoW8Hh0E
+    vRqyHElNV/8G1xARK3ZFw/xIMHMxC+8qnWc7GgZFixSi3VxSCohZ+QJAcUXY7e9R
+    m0IwYjulGQWMu+Ix19roAnWEuCx8eaq/AJb7g0K143dtfk+s047bZ3CQriqNJ/EQ
+    8jzIHqPkS03qbw==
+    -----END PRIVATE KEY-----
+    Bag Attributes
+        localKeyID: 01 00 00 00
+        friendlyName: 123Service
+    subject=/C=TH/ST=Bangkok/L=Bangkok/O=123Service Co., Ltd/OU=Bill Payment Unit/CN=123Service
+    issuer=/CN=SinaptIQ CA
+    -----BEGIN CERTIFICATE-----
+    MIIEeDCCA2CgAwIBAgIKLyFO+AAAAAAAJTANBgkqhkiG9w0BAQUFADAWMRQwEgYD
+    VQQDEwtTaW5hcHRJUSBDQTAeFw0xMjA0MjQwMjQwNDJaFw0yMjA0MjQwMjUwNDJa
+    MIGAMQswCQYDVQQGEwJUSDEQMA4GA1UECBMHQmFuZ2tvazEQMA4GA1UEBxMHQmFu
+    Z2tvazEcMBoGA1UEChMTMTIzU2VydmljZSBDby4sIEx0ZDEaMBgGA1UECxMRQmls
+    bCBQYXltZW50IFVuaXQxEzARBgNVBAMTCjEyM1NlcnZpY2UwgZ8wDQYJKoZIhvcN
+    AQEBBQADgY0AMIGJAoGBAI6hDqwQAc/G2BCXp2sAIT8YQtK8zOatZSo55hzxw119
+    j123PAenMvMKarvGRWrMRPWXUJmT+hENNw0QhaIgaj10ycuJB+q26r4m2oQ2RBKV
+    x1dg62ci8iM6XAh/jNxjs7G4gq/7w7rm+amb8EYf9IGHqHF448kSQqYV2R0vaaKH
+    AgMBAAGjggHfMIIB2zAOBgNVHQ8BAf8EBAMCBPAwRAYJKoZIhvcNAQkPBDcwNTAO
+    BggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQCAgCAMAcGBSsOAwIHMAoGCCqGSIb3
+    DQMHMBMGA1UdJQQMMAoGCCsGAQUFBwMBMB0GA1UdDgQWBBRVMnaJTFptAViyktLE
+    D3NE2BBzUTAfBgNVHSMEGDAWgBRXyFrkXQDMbm6uiT0txMCkTTYNkDB5BgNVHR8E
+    cjBwMG6gbKBqhjNodHRwOi8vdzJrM3N0dzEwMzNvMTFnL0NlcnRFbnJvbGwvU2lu
+    YXB0SVElMjBDQS5jcmyGM2ZpbGU6Ly9cXFcySzNTVFcxMDMzTzExR1xDZXJ0RW5y
+    b2xsXFNpbmFwdElRIENBLmNybDCBsgYIKwYBBQUHAQEEgaUwgaIwTwYIKwYBBQUH
+    MAKGQ2h0dHA6Ly93Mmszc3R3MTAzM28xMWcvQ2VydEVucm9sbC9XMkszU1RXMTAz
+    M08xMUdfU2luYXB0SVElMjBDQS5jcnQwTwYIKwYBBQUHMAKGQ2ZpbGU6Ly9cXFcy
+    SzNTVFcxMDMzTzExR1xDZXJ0RW5yb2xsXFcySzNTVFcxMDMzTzExR19TaW5hcHRJ
+    USBDQS5jcnQwDQYJKoZIhvcNAQEFBQADggEBAFSZX7aJgnSQ9D0WZN/h340E8CCl
+    +i+hdNx/I2uRMMP4soCJvPAhYvJ5vpCOKF3/1JOI87AQVKb+kEE46TU95Z3Wk+Kl
+    b4KjcmfvY7XRU6qg4xC9ppUvnN1YlML+hQT6qFhdGgHzJi/mZjzQn01aQQelXkUB
+    C1Z/H/nu7tc5oV9v69OEZg5z2KiZD8BDxuwj8Td45AYGm2AMPt6XPOAsukqmRVdU
+    jOjo+xWXUUbPWUTFOD+veyRh57vBKfRpHzr7/jW+8Xbdyl8rQMD5glyBI+knZ00V
+    etdCVNASalAFMKOQdIIR5yeFF/epgTGxKjGyHxyA/Ym0ZthlOY2OAlV6UEM=
+    -----END CERTIFICATE-----
+    """
+
+    static let checksumKeyUAT = "746D7SCHAIQ0QUZ0MRJWU0PQ3AD7PJ8B"
+    static let passphraseUAT = "123"
+
+}
