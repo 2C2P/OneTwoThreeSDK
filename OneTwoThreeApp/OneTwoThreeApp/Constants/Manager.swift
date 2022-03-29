@@ -15,10 +15,10 @@ class Manager: NSObject {
     
     var production: Bool = false
     
-    var checksumKey: String = Constants.checksumKeyUAT
-    var publicKey: String = Constants.publicKeyUAT
-    var privateKey: String = Constants.privateKeyUAT
-    var passphrase: String = Constants.passphraseUAT
+    var checksumKey: String = Constants.checksumKey
+    var publicKey: String = Constants.publicKey
+    var privateKey: String = Constants.privateKey
+    var passphrase: String = Constants.passphrase
     
     var service: OneTwoThreeSDKService {
         return OneTwoThreeSDKService(

@@ -49,7 +49,7 @@ class PaymentInteractor: PaymentBusinessLogic, PaymentDataStore {
         }
         
         let merchant = Merchant(
-            id: Constants.merchantIDUAT,
+            id: Constants.merchantID,
             redirectURL: DeeplinkManager.shared.appScheme,
             notificationURL: "https://uat2.123.co.th/DemoShopping/apicallurl.aspx",
             merchantData: [

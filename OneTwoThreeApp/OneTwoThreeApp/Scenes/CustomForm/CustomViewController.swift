@@ -346,7 +346,7 @@ extension CustomViewController {
 
 extension CustomViewController: FormHeaderViewDelegate {
     func onTouchProductionSwitch() {
-        merchant.id = Constants.merchantIDUAT
+        merchant.id = Constants.merchantID
         tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .automatic)
     }
 }

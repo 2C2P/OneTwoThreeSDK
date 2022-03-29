@@ -14,11 +14,11 @@ public struct Constants {
     
     static let dateFormat: String = "yyyy-MM-dd HH:mm:ss"
     
-    static let merchantIDUAT: String = "merchant@shopping.com"
+    static let merchantID: String = "merchant@shopping.com"
     
     // MARK: - UAT
     
-    static let publicKeyUAT =
+    static let publicKey =
     """
     -----BEGIN CERTIFICATE-----
     MIIFnjCCBIagAwIBAgITGAAAADpJCRqQIGWOIgAAAAAAOjANBgkqhkiG9w0BAQsF
@@ -55,7 +55,7 @@ public struct Constants {
     -----END CERTIFICATE-----
     """
 
-    static let privateKeyUAT =
+    static let privateKey =
     """
     Bag Attributes
         Microsoft Local Key set: <No Values>
@@ -113,7 +113,7 @@ public struct Constants {
     -----END CERTIFICATE-----
     """
 
-    static let checksumKeyUAT = "746D7SCHAIQ0QUZ0MRJWU0PQ3AD7PJ8B"
-    static let passphraseUAT = "123"
+    static let checksumKey = "746D7SCHAIQ0QUZ0MRJWU0PQ3AD7PJ8B"
+    static let passphrase = "123"
 
 }

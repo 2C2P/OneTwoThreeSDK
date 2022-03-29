@@ -13,17 +13,13 @@ import OneTwoThreeSDK
 
 class OneTwoThreeAppTests: XCTestCase {
     
-    // TODO: Set the environment.
-    private var production: Bool = false
-    
     var service = OneTwoThreeSDKService(
         production: false,
-        checksumKey: Constants.checksumKeyUAT,
-        publicKey: Constants.publicKeyUAT,
-        privateKey: Constants.privateKeyUAT,
-        passphrase: Constants.passphraseUAT
+        checksumKey: Constants.checksumKey,
+        publicKey: Constants.publicKey,
+        privateKey: Constants.privateKey,
+        passphrase: Constants.passphrase
     )
-    
     
     var startDeeplinkResponse: StartDeeplinkResponse?
     var getDeeplinkStatusResponse: GetDeeplinkStatusResponse?
@@ -33,7 +29,7 @@ class OneTwoThreeAppTests: XCTestCase {
     
     func testStartDeeplink() throws {
         let merchant = Merchant( 
-            id: Constants.merchantIDUAT,
+            id: Constants.merchantID,
             redirectURL: "onetwothreeapp://",
             notificationURL: "https://uat2.123.co.th/DemoShopping/apicallurl.aspx",
             merchantData: [
