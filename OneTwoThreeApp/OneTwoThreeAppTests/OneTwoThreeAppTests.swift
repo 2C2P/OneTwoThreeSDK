@@ -16,28 +16,14 @@ class OneTwoThreeAppTests: XCTestCase {
     // TODO: Set the environment.
     private var production: Bool = false
     
-    private var checksumKey: String {
-        return production ? Constants.checksumKeyPROD : Constants.checksumKeyUAT
-    }
-    private var publicKey: String {
-        return production ? Constants.publicKeyPROD : Constants.publicKeyUAT
-    }
-    private var privateKey: String {
-        return production ? Constants.privateKeyPROD : Constants.privateKeyUAT
-    }
-    private var passphrase: String {
-        return production ? Constants.passphrasePROD : Constants.passphraseUAT
-    }
+    var service = OneTwoThreeSDKService(
+        production: false,
+        checksumKey: Constants.checksumKeyUAT,
+        publicKey: Constants.publicKeyUAT,
+        privateKey: Constants.privateKeyUAT,
+        passphrase: Constants.passphraseUAT
+    )
     
-    var service: OneTwoThreeSDKService {
-        return OneTwoThreeSDKService(
-            production: production,
-            checksumKey: checksumKey,
-            publicKey: publicKey,
-            privateKey: privateKey,
-            passphrase: passphrase
-        )
-    }
     
     var startDeeplinkResponse: StartDeeplinkResponse?
     var getDeeplinkStatusResponse: GetDeeplinkStatusResponse?
@@ -45,11 +31,9 @@ class OneTwoThreeAppTests: XCTestCase {
     
     // MARK: - Tests
     
-    func testStartDeelink() throws {
-        print("\nProduction ENV: \(production)\n")
-        
+    func testStartDeeplink() throws {
         let merchant = Merchant( 
-            id: production ? Constants.merchantIDPROD : Constants.merchantIDUAT,
+            id: Constants.merchantIDUAT,
             redirectURL: "onetwothreeapp://",
             notificationURL: "https://uat2.123.co.th/DemoShopping/apicallurl.aspx",
             merchantData: [
@@ -66,16 +50,16 @@ class OneTwoThreeAppTests: XCTestCase {
             amount: "1.00",
             currencyCode: "THB",
             paymentInfo: "",
-            paymentExpiry: "2021-12-10 11:21:36"
+            paymentExpiry: Date().add(months: 3)?.formatted(format: Constants.dateFormat)
         )
         let buyer = Buyer(
-            email: "siriporn@2c2p.com",
-            mobile: "0878119880",
+            email: "example@email.com",
+            mobile: "0987654321",
             language: "EN",
             notifyBuyer: true,
             title: "Mr",
-            firstName: "Bruce",
-            lastName: "Wayne"
+            firstName: "John",
+            lastName: "Doe"
         )
         
         let expectation = self.expectation(description: "Call startDeeplink API successfully")

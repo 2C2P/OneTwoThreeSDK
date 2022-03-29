@@ -65,16 +65,16 @@ class PaymentInteractor: PaymentBusinessLogic, PaymentDataStore {
             productDesc: product.desc ?? "",
             amount: product.amount ?? "0",
             currencyCode: "THB",
-            paymentExpiry: "2021-12-10 11:21:36"
+            paymentExpiry: Date().add(months: 3)?.formatted(format: Constants.dateFormat)
         )
         let buyer = Buyer(
-            email: "siriporn@2c2p.com",
-            mobile: "0878119880",
+            email: "example@email.com",
+            mobile: "0987654321",
             language: "EN",
             notifyBuyer: true,
             title: "Mr",
-            firstName: "Bruce",
-            lastName: "Wayne"
+            firstName: "John",
+            lastName: "Doe"
         )
         Manager.shared.service.startDeeplink(merchant: merchant, transaction: transaction, buyer: buyer) { response in
             

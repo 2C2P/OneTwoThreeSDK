@@ -141,13 +141,13 @@ class CustomViewController: BaseViewController, CustomDisplayLogic {
         transaction.currencyCode = "THB"
         transaction.paymentExpiry = Date().add(months: 1)?.formatted(format: Constants.dateFormat)
         
-        buyer.email = "siriporn@2c2p.com"
-        buyer.mobile = "0878119880"
+        buyer.email = "example@email.com"
+        buyer.mobile = "0987654321"
         buyer.language = "EN"
         buyer.notifyBuyer = true
         buyer.title = "Mr"
-        buyer.firstName = "Bruce"
-        buyer.lastName = "Wayne"
+        buyer.firstName = "John"
+        buyer.lastName = "Dow"
     }
     
     // MARK: - Initial
