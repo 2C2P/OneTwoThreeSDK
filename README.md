@@ -26,13 +26,19 @@ import OneTwoThreeSDK
 
 class ViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Call deeplink function when run the application.
+        startDeeplink()
+    }
+    
     let service = OneTwoThreeSDKService(
-        checksumkey: "CHECKSUM_KEY",
+        production: false, // (optional) `false` by default
+        checksumKey: "CHECKSUM_KEY",
         publicKey: "PUBLIC_KEY",
         privateKey: "PRIVATE_KEY",
         passphrase: "PASSPHASE"
     )
-    
     let merchant = Merchant(
         id: "merchant@shopping.com",
         redirectURL: "onetwothreeapp://",
@@ -51,11 +57,11 @@ class ViewController: UIViewController {
         amount: "100",
         currencyCode: "THB",
         paymentInfo: "",
-        paymentExpiry: "2021-12-31 11:22:33"
+        paymentExpiry: "2022-12-31 11:22:33"
     )
     let buyer = Buyer(
         email: "example@gmail.com",
-        mobile: "09912345678",
+        mobile: "0991234567",
         language: "EN",
         notifyBuyer: true,
         title: "Mr",
@@ -68,7 +74,7 @@ class ViewController: UIViewController {
             // TODO: Success
             
             // NOTE: Redirect to bank app using 'deeplinkURL' from the response.
-            if let deeplinkURL = response?.deeplinkURL, let url = URL(string: deeplinkURL) {
+            if let deeplinkURL = response.deeplinkURL, let url = URL(string: deeplinkURL) {
                 UIApplication.shared.open(url) { (result) in
                     if result {
                         // TODO: Success
