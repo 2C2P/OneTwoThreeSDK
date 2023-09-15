@@ -4,11 +4,11 @@
 
 #### Swift Package Manager
 
-To integrate *OneTwoThreeSDK* using Swift Package Manager, you can easily add this to your Xcode project:
+To integrate OneTwoThreeSDK using Swift Package Manager, you can easily add this to your Xcode project:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/2C2P/OneTwoThreeSDK-iOS.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/OrawanM/OneTwoThreeSDK.git", .upToNextMajor(from: "1.0.2"))
 ]
 ```
 
@@ -26,19 +26,13 @@ import OneTwoThreeSDK
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Call deeplink function when run the application.
-        startDeeplink()
-    }
-    
     let service = OneTwoThreeSDKService(
-        production: false, // (optional) `false` by default
         checksumKey: "CHECKSUM_KEY",
         publicKey: "PUBLIC_KEY",
         privateKey: "PRIVATE_KEY",
         passphrase: "PASSPHASE"
     )
+    
     let merchant = Merchant(
         id: "merchant@shopping.com",
         redirectURL: "onetwothreeapp://",
@@ -57,16 +51,16 @@ class ViewController: UIViewController {
         amount: "100",
         currencyCode: "THB",
         paymentInfo: "",
-        paymentExpiry: "2022-12-31 11:22:33"
+        paymentExpiry: "2021-12-10 11:21:36"
     )
     let buyer = Buyer(
         email: "example@gmail.com",
-        mobile: "0991234567",
+        mobile: "09912345678",
         language: "EN",
         notifyBuyer: true,
         title: "Mr",
-        firstName: "John",
-        lastName: "Doe"
+        firstName: "Bruce",
+        lastName: "Wayne"
     )
     
     func startDeeplink() {
@@ -74,7 +68,7 @@ class ViewController: UIViewController {
             // TODO: Success
             
             // NOTE: Redirect to bank app using 'deeplinkURL' from the response.
-            if let deeplinkURL = response.deeplinkURL, let url = URL(string: deeplinkURL) {
+            if let deeplinkURL = response?.deeplinkURL, let url = URL(string: deeplinkURL) {
                 UIApplication.shared.open(url) { (result) in
                     if result {
                         // TODO: Success

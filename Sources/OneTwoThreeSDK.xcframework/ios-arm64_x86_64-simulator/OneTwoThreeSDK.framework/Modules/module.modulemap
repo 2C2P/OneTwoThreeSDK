@@ -6,6 +6,6 @@ framework module OneTwoThreeSDK {
 }
 
 module OneTwoThreeSDK.Swift {
-    header "OneTwoThreeSDK-Swift.h"
-    requires objc
+  header "OneTwoThreeSDK-Swift.h"
+  requires objc
 }
